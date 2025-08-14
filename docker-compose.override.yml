@@ -1,5 +1,15 @@
 # docker-compose.override.yml
+# Apenas declara volumes que o arquivo principal usa.
+# É seguro declarar mais de um nome; o Compose ignora os que não forem usados.
+
 volumes:
+  # Postgres — alguns composes usam "postgres", outros "pgdata"
+  postgres: {}
   pgdata: {}
+
+  # Redis — alguns usam "redis", outros "redisdata"
   redis: {}
+  redisdata: {}
+
+  # Uploads/ActiveStorage do Rails
   storage: {}
